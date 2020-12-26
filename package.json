@@ -4,9 +4,13 @@
   "description": "Scrap bdocodex",
   "main": "search.js",
   "scripts": {
-    "start": "node ./search.js",
+    "start": "node search.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT"
+  "author": "Ayeven#9725",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "puppeteer": "^5.5.0"
+  }
 }

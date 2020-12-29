@@ -1,16 +1,18 @@
 {
-  "name": "bdocodexscrap",
+  "name": "fetch",
   "version": "1.0.0",
-  "description": "Scrap bdocodex",
-  "main": "search.js",
+  "description": "",
+  "main": "fetch.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "html-entities": "^2.0.2",
+    "nested-property": "^4.0.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node search.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ayeven#9725",
-  "license": "MIT",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.5",
-    "puppeteer": "^5.5.0"
-  }
+  "author": "",
+  "license": "MIT"
 }

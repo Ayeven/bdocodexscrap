@@ -4,7 +4,7 @@ const {decode} = require('html-entities');
 const lang = 'us';
 const itemID = '4917';
 const cheerio = require ('cheerio');
-const level = '0'
+const level = '0';
 
 axios(`https://bdocodex.com/tip.php?id=item--${itemID}&enchant=${level}&l=${lang}`, {
   "headers": {
@@ -22,18 +22,18 @@ axios(`https://bdocodex.com/tip.php?id=item--${itemID}&enchant=${level}&l=${lang
   "mode": "cors",
   "credentials": "include"
 }).then(file =>{
-    const result = [];
-    const f = file.data;
-    const $ = cheerio.load(f);
-    const name = $('#item_name').eq(0).text().trim();
-    const type = $('td>span').eq(3).text();
-    const stat1 = $('td>span').slice(0).eq(4).text();
-    const stat2 = $('td>span').slice(0).eq(5).text().trim();
-    const stat3 = $('td>span').slice(0).eq(6).text().trim();
-    const stat4 = $('td>span').slice(0).eq(7).text().trim();
-    const stat5 = $('td>span').slice(0).eq(8).text().trim();
-    const desc1 = $('#edescription>span').text().trim();
-result.push({type:type,name:name,stat1:stat1, stat2:stat2,stat3:stat3,stat4:stat4,stat5:stat5,desc1:desc1});
-console.log(result);
-})
+  const result = [];
+  const f = file.data;
+  const $ = cheerio.load(f);
+  const name = $('#item_name').eq(0).text().trim();
+  const type = $('td>span').eq(3).text();
+  const stat1 = $('td>span').slice(0).eq(4).text();
+  const stat2 = $('td>span').slice(0).eq(5).text().trim();
+  const stat3 = $('td>span').slice(0).eq(6).text().trim();
+  const stat4 = $('td>span').slice(0).eq(7).text().trim();
+  const stat5 = $('td>span').slice(0).eq(8).text().trim();
+  const desc1 = $('#edescription>span').text().trim();
+  result.push({type:type,name:name,stat1:stat1, stat2:stat2,stat3:stat3,stat4:stat4,stat5:stat5,desc1:desc1});
+  console.log(result);
+});
 // Details for items

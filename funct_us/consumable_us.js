@@ -22,7 +22,7 @@ axios(`https://bdocodex.com/query.php?a=items&type=consumables&l=${lang}`, {
   "mode": "cors",
   "credentials": "include"
 }).then(file =>{
-    let result = []
+  const result = [];
   const f = file.data.aaData;
   for (let r=0; r<f.length;r++) {
     const id = c.get(f,`${r}.0`);
@@ -35,6 +35,6 @@ axios(`https://bdocodex.com/query.php?a=items&type=consumables&l=${lang}`, {
     const link2 = dirtyLink[1].split('" class=');
     const cLink = link2[0];
     result.push({id:id,name:cName,link:base+cLink});
-} //end of for loop
-fs.writeFileSync('./json_us/consumables_us.json',JSON.stringify(result,null,2));
-})
+  } //end of for loop
+  fs.writeFileSync('./json_us/consumables_us.json',JSON.stringify(result,null,2));
+});

@@ -22,7 +22,7 @@ axios(`https://bdocodex.com/query.php?a=items&type=materials&l=${lang}`, {
   "mode": "cors",
   "credentials": "include"
 }).then( file =>{
-  let result = [];
+  const result = [];
   const f = file.data.aaData;
   for (let r=0; r<f.length;r++) {
     const id = c.get(f,`${r}.0`);

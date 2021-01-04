@@ -5,22 +5,7 @@ const lang = 'us';
 const itemID = '8847';
 const cheerio = require ('cheerio');
 
-axios(`https://bdocodex.com/tip.php?id=design--${itemID}&enchant=0&l=${lang}`, {
-  "headers": {
-    "accept": "*/*",
-    "accept-language": "en-US,en;q=0.9",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "x-requested-with": "XMLHttpRequest"
-  },
-  "referrer": "https://bdocodex.com/us/designs/",
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": null,
-  "method": "GET",
-  "mode": "cors",
-  "credentials": "include"
-}).then(file =>{
+axios(`https://bdocodex.com/tip.php?id=design--${itemID}&enchant=0&l=${lang}`).then(file =>{
   const result = [];
   const f = file.data;
   const $ = cheerio.load(f);

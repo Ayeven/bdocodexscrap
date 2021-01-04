@@ -9,15 +9,7 @@ const encoded = encodeURI(query);
 const fs = require ('fs');
 
 
-axios({url:`https://bdocodex.com/query.php?a=search&l=${lang}&sq=${encoded}`,
-  headers:{"x-requested-with": "XMLHttpRequest"},
-  baseURL: "https://bdocodex.com/us/search/",
-  method: "GET",
-  responseType: "json",
-  withCredentials: false,
-  responseEncoding:'utf8',
-  data:{}
-}).then( file =>{
+axios({url:`https://bdocodex.com/query.php?a=search&l=${lang}&sq=${encoded}`}).then( file =>{
   const result = [];
   const f = file.data.aaData;
   for (let r=0; r<5;r++) {
@@ -35,5 +27,5 @@ axios({url:`https://bdocodex.com/query.php?a=search&l=${lang}&sq=${encoded}`,
     //result +=(`${id}:[${cName}](${base+cLink}),type:${type}`)+'\n';
   } //for end of line
   console.log(result);
-  fs.writeFileSync('./json_us/search_us.json',JSON.stringify(result,null,2) );
+  //fs.writeFileSync('./json_us/search_us.json',JSON.stringify(result,null,2) );
 });

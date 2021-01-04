@@ -5,22 +5,7 @@ const lang = 'tw';
 const recipeID = '227';
 const cheerio = require ('cheerio');
 
-axios(`https://bdocodex.com/tip.php?id=recipe--${recipeID}&l=${lang}`, {
-  "headers": {
-    "accept": "*/*",
-    "accept-language": "en-US,en;q=0.9",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "x-requested-with": "XMLHttpRequest"
-  },
-  "referrer": "https://bdocodex.com/us/recipes/culinary/",
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": null,
-  "method": "GET",
-  "mode": "cors",
-  "credentials": "include"
-}).then(res => {
+axios(`https://bdocodex.com/tip.php?id=recipe--${recipeID}&l=${lang}`).then(res => {
   const result = [];
   const html = res.data;
   const $ = cheerio.load(html);

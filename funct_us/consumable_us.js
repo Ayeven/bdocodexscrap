@@ -6,22 +6,7 @@ const lang = 'us';
 const fs = require ('fs');
 //const encoded = encodeURI(query);
 
-axios(`https://bdocodex.com/query.php?a=items&type=consumables&l=${lang}`, {
-  "headers": {
-    "accept": "application/json, text/javascript, */*; q=0.01",
-    "accept-language": "en-US,en;q=0.9",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "x-requested-with": "XMLHttpRequest"
-  },
-  "referrer": "https://bdocodex.com/us/items/consumables/",
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": null,
-  "method": "GET",
-  "mode": "cors",
-  "credentials": "include"
-}).then(file =>{
+axios(`https://bdocodex.com/query.php?a=items&type=consumables&l=${lang}`).then(file =>{
   const result = [];
   const f = file.data.aaData;
   for (let r=0; r<f.length;r++) {

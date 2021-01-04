@@ -6,22 +6,7 @@ const itemID = '4917';
 const cheerio = require ('cheerio');
 const level = '0';
 
-axios(`https://bdocodex.com/tip.php?id=item--${itemID}&enchant=${level}&l=${lang}`, {
-  "headers": {
-    "accept": "*/*",
-    "accept-language": "en-US,en;q=0.9",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "x-requested-with": "XMLHttpRequest"
-  },
-  "referrer": "https://bdocodex.com/us/weapon/morgenshtern/",
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": null,
-  "method": "GET",
-  "mode": "cors",
-  "credentials": "include"
-}).then(file =>{
+axios(`https://bdocodex.com/tip.php?id=item--${itemID}&enchant=${level}&l=${lang}`).then(file =>{
   const result = [];
   const f = file.data;
   const $ = cheerio.load(f);

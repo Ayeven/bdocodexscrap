@@ -24,14 +24,14 @@ axios(`https://bdocodex.com/tip.php?id=design--${itemID}&enchant=0&l=${lang}`).t
   const mats5 = $('a.qtooltip').eq(9).text().trim().padStart(1,1);
   const qtty6 = $('a.qtooltip').eq(10).text().trim().padStart(1,1);
   const mats6 = $('a.qtooltip').eq(11).text().trim().padStart(1,1);
-  if((mats3 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2});
-  console.log(result);} // 2 materials
-  else if((mats4 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3});
-  console.log(result);} // 3 materials
-  else if((mats5 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3,qtty4:qtty4,mats4:mats4});
-  console.log(result);} // 4 materials
-  else if((mats6 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3,qtty4:qtty4,mats4:mats4,qtty5:qtty5,mats5:mats5});
-  console.log(result);} // 5 materials
+  if ((mats3 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2});
+    console.log(result);} // 2 materials
+  else if ((mats4 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3});
+    console.log(result);} // 3 materials
+  else if ((mats5 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3,qtty4:qtty4,mats4:mats4});
+    console.log(result);} // 4 materials
+  else if ((mats6 == name) ) { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3,qtty4:qtty4,mats4:mats4,qtty5:qtty5,mats5:mats5});
+    console.log(result);} // 5 materials
   else { result.push({type:type,name:name,req1:req1, qtty1:qtty1,mats1:mats1,qtty2:qtty2,mats2:mats2, qtty3:qtty3,mats3:mats3,qtty4:qtty4,mats4:mats4,qtty5:qtty5,mats5:mats5,qtty6:qtty6,mats6:mats6});
-  console.log(result);} // 6 materials
+    console.log(result);} // 6 materials
 });

@@ -16,7 +16,7 @@ axios({url:`https://bdocodex.com/query.php?a=search&l=${lang}&sq=${encoded}`,
   responseEncoding:'utf8',
   data:{}
 }).then( file =>{
-  let result = [];
+  const result = [];
   const f = file.data.aaData;
   for (let r=0; r<5;r++) { //How long data aqcuired can be control by r length. (eg. r<10) will get only 10 results
     const id = c.get(f,`${r}.0`);
